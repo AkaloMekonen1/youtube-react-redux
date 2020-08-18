@@ -4,13 +4,14 @@ import {connect} from 'react-redux'
 function App(props) {
   return (
     <div className="App">
-        <p>{props.name.siteName}</p>
+        <p>{props.siteName}</p>
     </div>
   );
 }
 const mapStateToProps = (globalState)=>{
   return{
-    name: globalState
+    siteName: globalState.siteName
   }
 }
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {}
+export default connect(mapStateToProps, mapDispatchToProps)(App);
