@@ -1,10 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {changeSiteName} from './actions/changeSiteName'
 
 function App(props) {
   return (
     <div className="App">
-        <p>{props.siteName}</p>
+        <p onClick = {props.siteChange}>{props.siteName}</p>
     </div>
   );
 }
@@ -13,5 +14,7 @@ const mapStateToProps = (globalState)=>{
     siteName: globalState.siteName
   }
 }
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  siteChange: changeSiteName
+}
 export default connect(mapStateToProps, mapDispatchToProps)(App);
