@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {changeSiteName} from './actions/changeSiteName'
 
-function App(props) {
-  return (
-    <div className="App">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">{props.siteName}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">Users</a>
+class App extends Component{
+  render(){
+    setTimeout(()=>{
+      this.props.siteChange()
+    }, 3000)
+    return (
+      <div className="App">
+       <nav className="navbar navbar-expand-lg navbar-light bg-light">
+         <a className="navbar-brand" href="#">{this.props.siteName}</a>
+         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <a className="nav-link active" href="#">Home</a>
+              <a className="nav-link" href="#">Users</a>
+            </div>
+          </div>
+        </nav>
       </div>
-    </div>
-  </nav>
-    </div>
-  );
+    );
+  }
 }
+
 const mapStateToProps = (globalState)=>{
   return{
     siteName: globalState.siteName
