@@ -1,4 +1,6 @@
-const reducer = (state = {}, action) =>{
+const intState = {}
+const reducer = (state = intState, action) =>{
   
     return state
 }
+export default reducer
