@@ -23,7 +23,9 @@ class App extends Component{
           </div>
         </nav>
         <Router>
-          <Route path="login" component={Login} />
+          <Route path="/login" component={Login} />
+          <Route path="/userS" component={UserS} />
+          <Route path="/user: userID" component={User} />
         </Router>
       </div>
     );
