@@ -1,6 +1,6 @@
 const { Component } = require("react")
 
-import React, {Component} from react-dom
+import React, {Component} from 'react-dom'
 class Home extends Component{
     render(){
         return(
