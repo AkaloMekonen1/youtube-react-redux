@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class User extends Components{
     render(){
         return(
-            <div>
+            <div className="user-page">
              User
             </div>
         )
