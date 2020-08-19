@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { changeSiteName } from './actions/changeSiteName'
-import { BrowserRouter as Router, Route } from react-router-dom
-
+import { connect } from 'react-redux';
+import { changeSiteName } from './actions/changeSiteName';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Users from './components/Users';
+import User from './components/User';
+import Login from './components/Login'
 class App extends Component{
   render(){
     setTimeout(()=>{
