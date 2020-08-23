@@ -12,6 +12,7 @@ class App extends Component{
       this.props.siteChange()
     }, 3000)
     return (
+    <Router>
       <div className="App">
        <nav className="navbar navbar-expand-lg navbar-light bg-light">
          <a className="navbar-brand" href="#">{this.props.siteName}</a>
@@ -21,21 +22,21 @@ class App extends Component{
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/">User</NavLink>
-            <NavLink to="/">Users</NavLink>
-            <NavLink to="/">Login</NavLink>
+            <NavLink to="/User/1">User Number 1</NavLink>
+            <NavLink to="/Users">Users</NavLink>
+            <NavLink to="/Login">Login</NavLink>
               <a className="nav-link active" href="#">Home</a>
               <a className="nav-link" href="#">Users</a>
             </div>
           </div>
         </nav>
-        <Router>
-          <Route path="/" component={Home} />
+        
+          <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/users/:pageNumber" component={Users} />
+          <Route path="/users/:pageNumber?" component={Users} />
           <Route path="/user/:userID" component={User} />
-        </Router>
       </div>
+    </Router>
     );
   }
 }
