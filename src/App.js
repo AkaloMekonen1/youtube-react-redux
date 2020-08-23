@@ -20,14 +20,12 @@ class App extends Component{
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/User/1">User Number 1</NavLink>
-            <NavLink to="/Users">Users</NavLink>
-            <NavLink to="/Login">Login</NavLink>
-              <a className="nav-link active" href="#">Home</a>
-              <a className="nav-link" href="#">Users</a>
-            </div>
+            <ul className="navbar-nav">
+            <li className="nav-item"><NavLink className="nav-link" to="/">Home</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/User/1">User Number 1</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/Users">Users</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to="/Login">Login</NavLink></li>
+            </ul>
           </div>
         </nav>
         
