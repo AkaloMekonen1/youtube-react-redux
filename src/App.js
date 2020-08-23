@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeSiteName } from './actions/changeSiteName';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from './components/Home';
 import Users from './components/Users';
 import User from './components/User';
@@ -20,6 +20,10 @@ class App extends Component{
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">User</NavLink>
+            <NavLink to="/">Users</NavLink>
+            <NavLink to="/">Login</NavLink>
               <a className="nav-link active" href="#">Home</a>
               <a className="nav-link" href="#">Users</a>
             </div>
