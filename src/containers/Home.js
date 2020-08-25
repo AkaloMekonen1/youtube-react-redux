@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import {changeSiteName} from '../actions/changeSiteName'
 const Home = () => {
     return(
         <div>
@@ -6,5 +8,13 @@ const Home = () => {
         </div>
     )
 }
+const mapStateToProps = (globalState)=>{
+  return{
+    siteName: globalState.siteName
+  }
+}
+const mapDispatchToProps = {
+  siteChange: changeSiteName
+}
 
-export default Home
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
