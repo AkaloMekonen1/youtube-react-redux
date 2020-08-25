@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import{ changeSiteName } from '../actions/changeSiteName'
+import LoginForm from '../components/LoginForm'
 const Login = () => {
     return(
         <div>
-          Login
+          <LoginForm / >
         </div>
     )
 }
