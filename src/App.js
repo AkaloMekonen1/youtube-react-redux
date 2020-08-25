@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeSiteName } from './actions/changeSiteName';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import Home from './components/Home';
-import Users from './components/Users';
-import User from './components/User';
-import Login from './components/Login'
+import Home from './containers/Home';
+import Users from './containers/Users';
+import User from './containers/User';
+import Login from './containers/Login'
 class App extends Component{
   render(){
     setTimeout(()=>{
