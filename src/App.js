@@ -13,8 +13,7 @@ class App extends Component{
     }, 3000)
     return (
     <Router>
-      <div className="App">
-       <nav className="navbar navbar-expand-lg navbar-light bg-light">
+       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
          <a className="navbar-brand" href="#">{this.props.siteName}</a>
          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -28,7 +27,7 @@ class App extends Component{
             </ul>
           </div>
         </nav>
-        
+        <div className="container">
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/users/:pageNumber?" component={Users} />
