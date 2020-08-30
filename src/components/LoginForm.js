@@ -9,6 +9,11 @@ class LoginForm extends Component{
       }
     }
   }
+   handlerChangeUserEmail = (e)=>{
+     this.setState({
+       user: {...this.state, email: e.target.value}
+     })
+  }
   render(){
       return (
         <form className="login-form">
@@ -22,6 +27,7 @@ class LoginForm extends Component{
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
+            {this.state.user.email}
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
             </small>
