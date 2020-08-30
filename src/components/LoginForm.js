@@ -3,9 +3,6 @@ import React from "react";
 const LoginForm = (props) => {
   return (
     <form className="login-form">
-      <div className="alert alert-primary" role="alert">
-        {props.msg}
-      </div>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email address</label>
         <input
