@@ -16,6 +16,9 @@ class LoginForm extends Component{
        user: user
      })
   }
+  componentWillMount(){
+    console.log('component')
+  }
   render(){
       return (
         <form className="login-form">
@@ -51,6 +54,9 @@ class LoginForm extends Component{
         </form>
       );
     ;
+  }
+  componentDidMount(){
+    console.log('component did mount')
   }
 }
 
