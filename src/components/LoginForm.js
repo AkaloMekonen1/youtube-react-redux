@@ -9,9 +9,11 @@ class LoginForm extends Component{
       }
     }
   }
-   handlerChangeUserEmail = (e)=>{
+   handlerChangeUser = (property,value)=>{
+     let user = this.state.user
+     user[property] = value
      this.setState({
-       user: {...this.state, email: e.target.value}
+       user: user
      })
   }
   render(){
@@ -22,7 +24,7 @@ class LoginForm extends Component{
             <input
               type="email"
               value = {this.state.user.email}
-              onChange = {this.handlerChangeUserEmail}
+              onChange = {(e)=>this.handlerChangeUser('email',e.target.value)}
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
@@ -36,9 +38,12 @@ class LoginForm extends Component{
             <label htmlFor="exampleInputPassword1">Password</label>
             <input
               type="password"
+              value = {this.state.user.password}
+              onChange = {(e)=>this.handlerChangeUser('password',e.target.value)}
               className="form-control"
               id="exampleInputPassword1"
             />
+            {this.state.user.password}
           </div>
           <button type="submit" className="btn btn-primary">
             Submit
