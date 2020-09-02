@@ -6,7 +6,8 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      msg: "This is the message"
+      msg: "This is the message",
+      enableLoginForm: true
     }
     setTimeout(() => {
       this.setState({
@@ -14,10 +15,16 @@ class Login extends Component {
       })
     }, 2000)
   }
+  toggleLoginForm = (e) => {
+    this.setState({
+      enableLoginForm: !enableLoginForm
+    })
+  }
   render() {
     return (
       <div>
         <LoginForm msg = {this.state.msg}/>
+        <button onClick = {this.toggleLoginForm}>Toggle Login Form</button>
       </div>
     );
   }
