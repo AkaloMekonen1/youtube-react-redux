@@ -17,7 +17,7 @@ class LoginForm extends Component{
      })
   }
   componentWillMount(){
-    console.log('component')
+    console.log('component will mount')
   }
   render(){
       return (
