@@ -17,13 +17,17 @@ class Login extends Component {
   }
   toggleLoginForm = (e) => {
     this.setState({
-      enableLoginForm: !enableLoginForm
+      enableLoginForm: !this.state.enableLoginForm
     })
   }
   render() {
+    let loginForm = ""
+    if(this.state.enableLoginForm){
+      loginForm = <LoginForm msg = {this.state.msg}/>
+    }
     return (
       <div>
-        <LoginForm msg = {this.state.msg}/>
+        {loginForm}
         <button onClick = {this.toggleLoginForm}>Toggle Login Form</button>
       </div>
     );
