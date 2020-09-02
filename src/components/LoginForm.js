@@ -58,6 +58,16 @@ class LoginForm extends Component{
   componentDidMount(){
     console.log('component did mount')
   }
+  componentWillReceiveProps(nextProps){
+    console.log("componentWillReceiveProps",nextProps)
+  }
+  shouldComponentUpdate(nextProps, nextState){
+    console.log("shouldComponentUpdate", nextProps, nextState)
+    return true
+  }
+  componentWillUnmount(){
+    console.log("componentWillUnmount")
+  }
 }
 
 export default LoginForm;
