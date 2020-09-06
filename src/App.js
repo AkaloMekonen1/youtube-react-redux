@@ -8,9 +8,6 @@ import User from "./containers/User";
 import Login from "./containers/Login";
 class App extends Component {
   render() {
-    setTimeout(() => {
-      this.props.siteChange();
-    }, 3000);
     return (
       <Router>
         <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
