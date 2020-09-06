@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "./actions/changeSiteName";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link ,NavLink } from "react-router-dom";
 import Home from "./containers/Home";
 import Users from "./containers/Users";
 import User from "./containers/User";
@@ -14,9 +14,7 @@ class App extends Component {
     return (
       <Router>
         <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
-          <a className="navbar-brand" href="#">
-            {this.props.siteName}
-          </a>
+          <Link to = '/'>{this.props.siteName}</Link>
           <button
             className="navbar-toggler"
             type="button"
