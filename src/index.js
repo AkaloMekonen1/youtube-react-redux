@@ -2,12 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import siteReducer from "./reducers/siteReducer";
-import { createStore } from "redux";
+import store from './store'
 import { Provider } from "react-redux";
-
-const store = createStore(siteReducer);
-store.subscribe(() => store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
