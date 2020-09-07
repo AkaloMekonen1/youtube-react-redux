@@ -1,10 +1,13 @@
 const { bindActionCreators } = require("redux");
 
-const initState ={}
+const initState ={
+    loginUser: false
+}
 const userReducer = (state = initState, action)=>{
+    console.log('user reducer')
     switch(action.type){
-        case 'CHANGE_USER_NAME':
-            return state = {...state, userName: action.payload}
+        case 'LOGIN':
+            return state = {...state, loginUser: action.payload}
             default: return state
     }
 }
