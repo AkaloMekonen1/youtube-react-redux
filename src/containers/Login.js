@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName";
+import { loginUser } from "../actions/loginUser"
 import LoginForm from "../components/LoginForm";
 class Login extends Component {
   constructor() {
@@ -41,5 +42,6 @@ const mapStateToProps = (globalState) => {
 };
 const mapDispatchToProps = {
   siteChange: changeSiteName,
+  userLogin: loginUser
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
