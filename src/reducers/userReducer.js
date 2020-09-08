@@ -1,4 +1,3 @@
-const { bindActionCreators } = require("redux");
 
 const initState ={
     loginUser: false

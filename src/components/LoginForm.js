@@ -18,7 +18,7 @@ class LoginForm extends Component{
   }
   handlerSubmit =  (e)=>{
     e.preventDefault()
-    this.props.handlerLogin()
+    this.props.handlerLogin(this.state.user.email, this.state.user.password)
   }
   render(){
       return (

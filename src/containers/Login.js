@@ -15,8 +15,8 @@ class Login extends Component {
       enableLoginForm: !this.state.enableLoginForm
     })
   }
-  handlerLogin = ()=>{
-    this.props.userLogin()
+  handlerLogin = (email, password)=>{
+    this.props.userLogin(email, password)
   }
   render() {
     let loginForm = ""

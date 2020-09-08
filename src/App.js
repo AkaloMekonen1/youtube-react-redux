@@ -13,7 +13,6 @@ class App extends Component {
       <Router>
         <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
           <Link to = '/'>{this.props.siteName}</Link>
-          <button onClick = { this.props.siteChange }>Change Site Name</button>
           <button
             className="navbar-toggler"
             type="button"
