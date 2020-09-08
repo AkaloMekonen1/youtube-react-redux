@@ -16,10 +16,13 @@ class LoginForm extends Component{
        user: user
      })
   }
-  
+  handlerSubmit =  (e)=>{
+    e.preventDefault()
+    this.props.handlerLogin()
+  }
   render(){
       return (
-        <form className="login-form">
+        <form className="login-form" onSubmit = {this.handlerSubmit}>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email address</label>
             <input
@@ -30,7 +33,6 @@ class LoginForm extends Component{
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            {this.state.user.email}
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your email with anyone else.
             </small>
@@ -44,7 +46,6 @@ class LoginForm extends Component{
               className="form-control"
               id="exampleInputPassword1"
             />
-            {this.state.user.password}
           </div>
           <button type="submit" className="btn btn-primary">
             Submit
