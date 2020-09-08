@@ -12,9 +12,10 @@ export const loginUser = (email, password) => {
          body: JSON.stringify(body)
     })
         .then(response => response.json())
-        .then(data => console.log(data));
-    return {
-        type: 'LOGIN',
-        payload: true
-    }
+        .then(data => {console.log(data)
+            return {
+                type: 'LOGIN',
+                payload: true
+            }});
+    
 }
