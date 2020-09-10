@@ -13,9 +13,10 @@ export const loginUser = (email, password) => {
     })
         .then(response => response.json())
         .then(data => {console.log(data)
+            const isLoggedIn = (typeof data.token !== 'undefined' && data.token !== '')
             return {
                 type: 'LOGIN',
-                payload: true
+                payload: isLoggedIn
             }});
     
 }
