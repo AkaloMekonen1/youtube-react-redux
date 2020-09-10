@@ -7,7 +7,9 @@ const store = createStore(
   combineReducers({
     siteReducer,
     userReducer,
-  })
+  }),
+  {},
+  applyMiddleware(thunk)
 );
 
 export default store;
