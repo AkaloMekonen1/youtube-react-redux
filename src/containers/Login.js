@@ -6,6 +6,7 @@ class Login extends Component {
 
   handlerLogin = (email, password)=>{
     this.props.userLogin(email, password)
+    console.log(this.props.loginUser)
   }
   render() {
     return (
@@ -16,9 +17,9 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
   return {
-    
+    loginUser: state.userReducer.loginUser
   };
 };
 const mapDispatchToProps = {

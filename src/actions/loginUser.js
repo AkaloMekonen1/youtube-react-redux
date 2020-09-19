@@ -2,8 +2,8 @@ export const loginUser = (email, password) => {
     return async(dispatch) => {
         console.log(email, password)
         const body = {
-            email,
-            password
+            email: 'eve.holt@reqres.in',
+            password: 'cityslicka'
         }
         const options = {
             method: 'POST',
