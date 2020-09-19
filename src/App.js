@@ -27,26 +27,11 @@ class App extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/User/1">
-                  User Number 1
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Users">
-                  Users
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/Login">
-                  Login
-                </NavLink>
-              </li>
+              <li className="nav-item"><NavLink className="nav-link" exact to="/"> Home </NavLink></li>
+              <li className="nav-item"><NavLink className="nav-link" to="/User/1"> User Number 1 </NavLink> </li>
+              <li className="nav-item"><NavLink className="nav-link" to="/Users"> Users </NavLink></li>
+              <li className="nav-item"><NavLink className="nav-link" to="/Login"> Login </NavLink></li>
+              <li className="nav-item"><Link className="nav-link" to="/Login"> Logout </Link></li>
             </ul>
           </div>
         </nav>
