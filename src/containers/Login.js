@@ -5,12 +5,13 @@ import LoginForm from "../components/LoginForm";
 class Login extends Component {
   componentWillMount(){
     if(this.props.loginUser===true){
-      this.props.history.push('./Home.js')
+      this.props.history.push('./')
     }
   }
 
   handlerLogin = (email, password)=>{
     this.props.userLogin(email, password)
+    this.props.history.push('./')
   }
   render() {
     return (
