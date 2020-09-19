@@ -2,7 +2,6 @@ const initState = {
     siteName: "Youtube site name"
 }
 const reducer = (state = initState, action)=>{
-    console.log('site reducer')
     switch(action.type){
         case 'CHANGE_SITE_NAME':
             console.log('CHANGE_SITE_NAME')
