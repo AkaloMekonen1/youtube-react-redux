@@ -8,6 +8,9 @@ import User from "./containers/User";
 import Login from "./containers/Login";
 import PrivateRouter from "./containers/PrivateRout"
 class App extends Component {
+  handlerLogout = ()=>{
+    return window.localStorage.setItem('loginUser', null)
+  }
 
   render() {
     return (
@@ -31,7 +34,7 @@ class App extends Component {
               <li className="nav-item"><NavLink className="nav-link" to="/User/1"> User Number 1 </NavLink> </li>
               <li className="nav-item"><NavLink className="nav-link" to="/Users"> Users </NavLink></li>
               <li className="nav-item"><NavLink className="nav-link" to="/Login"> Login </NavLink></li>
-              <li className="nav-item"><Link className="nav-link" to="/Login"> Logout </Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/Login" onClick={this.handlerLogout}> Logout </Link></li>
             </ul>
           </div>
         </nav>
