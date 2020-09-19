@@ -1,12 +1,12 @@
-import { loginUser } from "../actions/loginUser"
 
 const initState ={
     loginUser: false
 }
 const userReducer = (state = initState, action)=>{
-    console.log('user reducer',state.loginUser)
+    console.log('user reducer',state)
     switch(action.type){
         case 'LOGIN':
+            window.localStorage.getItem('loginUser', action.payload)
             return state = {...state, loginUser: action.payload}
             default: return state
     }
