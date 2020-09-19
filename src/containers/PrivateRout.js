@@ -1,6 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux'
-
-const PrivateRouter = (props)=>{
+import { loginUser } from '../actions/loginUser';
+const PrivateRouter = ({path, component=Component, loginUser , ...rest})=>{
     return()
 }
+const mapStateToProps = (globalState)=>{
+    return {loginUser: globalState.UserReducer.loginUser}
+}
+const mapDispatchToProps = {
+   
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PrivateRouter);
