@@ -6,6 +6,7 @@ import Home from "./containers/Home";
 import Users from "./containers/Users";
 import User from "./containers/User";
 import Login from "./containers/Login";
+import PrivateRouter from "./containers/PrivateRout"
 class App extends Component {
 
   render() {
@@ -52,8 +53,8 @@ class App extends Component {
         <div className="container">
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/users/:pageNumber?" component={Users} />
-          <Route path="/user/:userID" component={User} />
+          <PrivateRouter path="/users/:pageNumber?" component={Users} />
+          <PrivateRouter path="/user/:userID" component={User} />
         </div>
       </Router>
     );
