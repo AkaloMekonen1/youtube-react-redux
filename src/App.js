@@ -7,9 +7,10 @@ import Users from "./containers/Users";
 import User from "./containers/User";
 import Login from "./containers/Login";
 import PrivateRouter from "./containers/PrivateRout"
+import {logoutUser} from './actions/loginUser'
 class App extends Component {
   handlerLogout = ()=>{
-    return window.localStorage.setItem('loginUser', null)
+    
   }
 
   render() {
