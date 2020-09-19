@@ -3,10 +3,14 @@ import { connect } from "react-redux";
 import { loginUser } from "../actions/loginUser"
 import LoginForm from "../components/LoginForm";
 class Login extends Component {
+  componentWillMount(){
+    if(this.props.loginUser===true){
+      this.props.history.push('./Home.js')
+    }
+  }
 
   handlerLogin = (email, password)=>{
     this.props.userLogin(email, password)
-    console.log(this.props.loginUser)
   }
   render() {
     return (
@@ -17,9 +21,9 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (globalState) => {
   return {
-    loginUser: state.userReducer.loginUser
+    loginUser: globalState.userReducer.loginUser
   };
 };
 const mapDispatchToProps = {
