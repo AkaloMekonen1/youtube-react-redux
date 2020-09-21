@@ -14,8 +14,13 @@ const userReducer = (state = initState, action)=>{
     switch(action.type){
         case 'LOGIN':
             window.localStorage.setItem('loginUser', action.payload)
-            return state = {...state, loginUser: action.payload}
+            state = {...state, loginUser: action.payload}
+            break
+        case 'SET_USERS':
+            state = {...state, users: action.payload}
+            break 
             default: 
+            break
     }
 
     console.log('user reducer',state)
