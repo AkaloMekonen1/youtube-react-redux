@@ -21,7 +21,7 @@ const Users = () => {
 };
 const mapStateToProps = (globalState) => {
   return {
-    siteName: globalState.siteName,
+    users: globalState.userReducer.user,
   };
 };
 const mapDispatchToState = {
