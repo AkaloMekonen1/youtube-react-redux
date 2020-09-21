@@ -9,6 +9,7 @@ const userReducer = (state = initState, action)=>{
             return state = {...state, loginUser: action.payload}
             default: 
     }
+    
     console.log('user reducer',state)
     return state
 }
