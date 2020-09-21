@@ -33,28 +33,16 @@ export const logoutUser = ()=>{
     }
 }
 
-export const getHandleUsers = ()=>(email, password) => {
+export const getHandleUsers = ()=>(pageNumber) => {
     return async(dispatch) => {
-        console.log(email, password)
-        const body = {
-            email: 'eve.holt@reqres.in',
-            password: 'cityslicka'
-        }
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body)
-        }
-        fetch('https://reqres.in/api/users?page=2', options)
+        
+        fetch(`https://reqres.in/api/users?page=${pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                const isLoggedIn = (typeof data.token !== 'undefined' && data.token !== '')
                 console.log(data)
                 return dispatch({
-                    type: 'LOGIN',
-                    payload: isLoggedIn
+                    type: 'SET_USERS',
+                    payload: data
                 })
             });
     }
