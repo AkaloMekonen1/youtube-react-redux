@@ -1,7 +1,14 @@
 const localLoginUser = window.localStorage.getItem('loginUser')
 const initState ={
     loginUser: (localLoginUser !== null ? (localLoginUser==='true'): false),
-    users: {}
+    users: {
+        
+            page: null,
+            per_page: null,
+            total: null,
+            total_pages: null,
+            data: []
+    }
 }
 const userReducer = (state = initState, action)=>{
     switch(action.type){
