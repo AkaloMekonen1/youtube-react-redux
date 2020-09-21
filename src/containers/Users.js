@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName.js";
+import {getHandleUsers} from "../actions/loginUser"
 class Users extends Component {
   componentWillMount(){
     this.props.handleUsers()
@@ -35,5 +36,6 @@ const mapStateToProps = (globalState) => {
 };
 const mapDispatchToState = {
   siteChange: changeSiteName,
+  handleUsers: getHandleUsers
 };
 export default connect(mapStateToProps, mapDispatchToState)(Users);
