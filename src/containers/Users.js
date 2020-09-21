@@ -4,7 +4,7 @@ import { changeSiteName } from "../actions/changeSiteName.js";
 import {getHandleUsers} from "../actions/usersAction"
 class Users extends Component {
   componentWillMount(){
-    this.props.handleUsers()
+    this.props.handleUsers(2)
   }
   render() {
     return (
