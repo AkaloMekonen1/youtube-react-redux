@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName.js";
 const Users = () => {
-  return (<table class="table table-dark">
+  return (<table className="table table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -11,11 +11,11 @@ const Users = () => {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-    </tr>
+     {this.props.users((user, userIndex)=><tr>
+      <th key={userIndex} scope="row">{user.id}</th>
+      <td>{user.first_name}</td>
+      <td>{user.last_name}</td>
+    </tr>)}
   </tbody>
 </table>);
 };
