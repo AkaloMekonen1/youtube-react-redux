@@ -1,6 +1,7 @@
 const localLoginUser = window.localStorage.getItem('loginUser')
 const initState ={
-    loginUser: (localLoginUser !== null ? (localLoginUser==='true'): false)
+    loginUser: (localLoginUser !== null ? (localLoginUser==='true'): false),
+    users: {}
 }
 const userReducer = (state = initState, action)=>{
     switch(action.type){
@@ -9,7 +10,7 @@ const userReducer = (state = initState, action)=>{
             return state = {...state, loginUser: action.payload}
             default: 
     }
-    
+
     console.log('user reducer',state)
     return state
 }
