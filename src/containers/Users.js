@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName.js";
 class Users extends Component {
+  componentWillMount(){
+    this.props.handleUsers()
+  }
   render() {
     return (
       <table className="table table-dark">
