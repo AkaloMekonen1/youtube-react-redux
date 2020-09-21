@@ -7,7 +7,7 @@ import Users from "./containers/Users";
 import User from "./containers/User";
 import Login from "./containers/Login";
 import PrivateRouter from "./containers/PrivateRout"
-import {logoutUser} from './actions/loginUser'
+import {logoutUser} from './actions/usersAction'
 class App extends Component {
   handlerLogout = ()=>{
     return this.props.logoutUser()

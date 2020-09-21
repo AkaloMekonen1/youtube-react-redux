@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName.js";
-import {getHandleUsers} from "../actions/loginUser"
+import {getHandleUsers} from "../actions/usersAction"
 class Users extends Component {
   componentWillMount(){
     this.props.handleUsers()
