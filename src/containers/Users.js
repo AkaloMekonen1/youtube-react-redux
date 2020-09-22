@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeSiteName } from "../actions/changeSiteName.js";
-import {getHandleUsers} from "../actions/usersAction"
+import {handleUsers} from "../actions/usersAction"
 class Users extends Component {
   componentWillMount(){
-    this.props.handleUsers(2)
+    this.props.handleUsers(1)
   }
   render() {
     return (
@@ -17,13 +17,13 @@ class Users extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.users.data.map((user, userIndex) => (
+          {this.props.users.data.map((user, userIndex) =>
             <tr key={userIndex}>
               <th scope="row">{user.id}</th>
               <td>{user.first_name}</td>
               <td>{user.last_name}</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     );
@@ -36,6 +36,6 @@ const mapStateToProps = (globalState) => {
 };
 const mapDispatchToState = {
   siteChange: changeSiteName,
-  handleUsers: getHandleUsers
+  handleUsers: handleUsers
 };
 export default connect(mapStateToProps, mapDispatchToState)(Users);

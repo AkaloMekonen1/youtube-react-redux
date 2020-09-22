@@ -33,13 +33,12 @@ export const logoutUser = ()=>{
     }
 }
 
-export const getHandleUsers = ()=>(pageNumber) => {
+export const handleUsers = (pageNumber) => {
     return async(dispatch) => {
         
         fetch(`https://reqres.in/api/users?page=${pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 return dispatch({
                     type: 'SET_USERS',
                     payload: data
