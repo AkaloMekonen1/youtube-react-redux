@@ -4,7 +4,11 @@ import { changeSiteName } from "../actions/changeSiteName.js";
 import {handleUsers} from "../actions/usersAction"
 class Users extends Component {
   componentWillMount(){
-    this.props.handleUsers(1)
+    this.props.handleUsers(this.pageNumber)
+  }
+  
+  get pageNumber(){
+    
   }
   render() {
     return (
