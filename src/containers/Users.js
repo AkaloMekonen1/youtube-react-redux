@@ -9,6 +9,7 @@ class Users extends Component {
   
   get pageNumber(){
     const isPageNumberExist = typeof this.props.match.params.pageNumber !== 'undefined'
+    return(isPageNumberExist ? this.props.match.params.pageNumber : 1)
   }
   render() {
     return (
