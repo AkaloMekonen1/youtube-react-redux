@@ -10,11 +10,24 @@ class Users extends Component {
   get pageNumber() {
     const isPageNumberExist =
       typeof this.props.match.params.pageNumber !== "undefined";
-    return (isPageNumberExist ? this.props.match.params.pageNumber : 1);
+    return isPageNumberExist ? this.props.match.params.pageNumber : 1;
   }
 
-  changePageNumber() {}
+  handleChangePageNumberRender() {
+    let pageNumberRender = [];
+    for (let i = 1; i < this.props.users.total_pages.length; i++) {
+      pageNumberRender.push(
+        <li key={i} className="page-item">
+          <button className="page-link">
+            {i}
+          </button>
+        </li>
+      );
+      return pageNumberRender
+    }
+  }
   render() {
+    const changePageNumberRender = this.handleChangePageNumberRender
     return (
       <div>
         <table className="table table-dark">
@@ -36,11 +49,8 @@ class Users extends Component {
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
-  <ul className="pagination">
-    <li className="page-item"><a className="page-link" href="#">1</a></li>
-    <li className="page-item"><a className="page-link" href="#">2</a></li>
-  </ul>
-</nav>
+          {changePageNumberRender}
+        </nav>
       </div>
     );
   }
