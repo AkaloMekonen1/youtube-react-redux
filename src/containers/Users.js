@@ -15,12 +15,10 @@ class Users extends Component {
 
   handleChangePageNumberRender() {
     let pageNumberRender = [];
-    for (let i = 1; i < this.props.users.total_pages.length; i++) {
+    for (let i = 1; i < this.props.users.total_pages; i++) {
       pageNumberRender.push(
         <li key={i} className="page-item">
-          <button className="page-link" onClick = {()=>this.handleButtonClick(i)}>
-            {i}
-          </button>
+          <button className="page-link" onClick = {()=>this.handleButtonClick(i)}>{i}</button>
         </li>
       );
     }
@@ -33,7 +31,8 @@ class Users extends Component {
     }
   }
   render() {
-    const changePageNumberRender = this.handleChangePageNumberRender
+    const changePageNumberRender = this.handleChangePageNumberRender()
+    console.log(changePageNumberRender)
     return (
       <div>
         <table className="table table-dark">
@@ -56,7 +55,7 @@ class Users extends Component {
         </table>
         <nav aria-label="Page navigation example">
           <ul>
-          {changePageNumberRender}
+           {changePageNumberRender}
           </ul>
         </nav>
       </div>
