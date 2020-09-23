@@ -10,8 +10,10 @@ class Users extends Component {
   get pageNumber() {
     const isPageNumberExist =
       typeof this.props.match.params.pageNumber !== "undefined";
-    return isPageNumberExist ? this.props.match.params.pageNumber : 1;
+    return (isPageNumberExist ? this.props.match.params.pageNumber : 1);
   }
+
+  changePageNumber() {}
   render() {
     return (
       <div>
@@ -34,7 +36,7 @@ class Users extends Component {
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
-  <ul class="pagination">
+  <ul className="pagination">
     <li className="page-item"><a className="page-link" href="#">1</a></li>
     <li className="page-item"><a className="page-link" href="#">2</a></li>
   </ul>
