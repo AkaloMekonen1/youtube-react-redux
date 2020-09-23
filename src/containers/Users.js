@@ -15,7 +15,7 @@ class Users extends Component {
 
   handleChangePageNumberRender() {
     let pageNumberRender = [];
-    for (let i = 1; i < this.props.users.total_pages; i++) {
+    for (let i = 1; i <= this.props.users.total_pages; i++) {
       pageNumberRender.push(
         <li key={i} className="page-item">
           <button className="page-link" onClick = {()=>this.handleButtonClick(i)}>{i}</button>
@@ -27,7 +27,7 @@ class Users extends Component {
   handleButtonClick(pageNumber){
     if(this.props.users.page !== pageNumber){
       this.props.history.push(`/Users/${pageNumber}`)
-      this.props.getUsers(pageNumber)
+      // this.props.getUsers(pageNumber)
     }
   }
   render() {
@@ -54,7 +54,7 @@ class Users extends Component {
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
-          <ul>
+          <ul className="pagination">
            {changePageNumberRender}
           </ul>
         </nav>
