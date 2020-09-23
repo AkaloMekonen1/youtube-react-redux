@@ -18,12 +18,18 @@ class Users extends Component {
     for (let i = 1; i < this.props.users.total_pages.length; i++) {
       pageNumberRender.push(
         <li key={i} className="page-item">
-          <button className="page-link">
+          <button className="page-link" onClick = {()=>this.handleButtonClick(i)}>
             {i}
           </button>
         </li>
       );
-      return pageNumberRender
+    }
+    return pageNumberRender
+  }
+  handleButtonClick(pageNumber){
+    if(this.props.users.page !== pageNumber){
+      this.props.history.push(`/Users/${pageNumber}`)
+      this.props.getUsers(pageNumber)
     }
   }
   render() {
@@ -49,7 +55,9 @@ class Users extends Component {
           </tbody>
         </table>
         <nav aria-label="Page navigation example">
+          <ul>
           {changePageNumberRender}
+          </ul>
         </nav>
       </div>
     );
