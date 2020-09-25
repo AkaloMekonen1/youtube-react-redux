@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
-import Card from "../components/Cards"
+import Cards from "../components/Cards"
 class User extends Component {
   render() {
     return(
       <div> 
-        <Card />
+        <Cards />
       </div>
     )
   }
