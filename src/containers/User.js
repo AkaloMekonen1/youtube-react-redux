@@ -1,15 +1,19 @@
-import React from "react";
+import React, {Component} from "react";
 import { connect } from "react-redux";
-import { changeSiteName } from "../actions/changeSiteName";
-const User = () => {
-  return <div>User</div>;
-};
+import Card from "../components/Cards"
+class User extends Component {
+  render() {
+    return(
+      <div> 
+        <Card />
+      </div>
+    )
+  }
+}
 const mapStateToProps = (globalState) => {
   return {
-    siteName: globalState.siteName,
   };
 };
 const mapDispatchToProps = {
-  siteChange: changeSiteName,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(User);
