@@ -39,6 +39,7 @@ export const handleUsers = (pageNumber) => {
         fetch(`https://reqres.in/api/users?page=${pageNumber}`)
             .then(response => response.json())
             .then(data => {
+                console.log(data, "old action")
                 return dispatch({
                     type: 'SET_USERS',
                     payload: data
@@ -54,6 +55,7 @@ export const handleUser = (userID) => {
         fetch(`https://reqres.in/api/users/${userID}`)
             .then(response => response.json())
             .then(data => {
+                console.log(data, "new action")
                 return dispatch({
                     type: 'SET_USER',
                     payload: data

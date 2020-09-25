@@ -3,16 +3,14 @@ import { connect } from "react-redux";
 import { handleUser} from "../actions/usersAction"
 class Cards extends Component {
   render() {
+      console.log(this.props.userActive)
     return (
       <div className="card">
-        <img className="card-img-top" src="..." alt="Card image cap" />
+        <img className="card-img-top" src={this.props.userActive.data.avatar} alt="" />
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="btn btn-primary">
+          <h5 className="card-title">{this.props.userActive.data.first_name}</h5>
+          <p className="card-text">{this.props.userActive.ad.text}</p>
+          <a href={this.props.userActive.ad.url} className="btn btn-primary">
             Go somewhere
           </a>
         </div>

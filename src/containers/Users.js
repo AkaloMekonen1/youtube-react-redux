@@ -37,7 +37,6 @@ class Users extends Component {
   }
   render() {
     const changePageNumberRender = this.handleChangePageNumberRender()
-    console.log(changePageNumberRender)
     return (
       <div>
         <table className="table table-dark">
