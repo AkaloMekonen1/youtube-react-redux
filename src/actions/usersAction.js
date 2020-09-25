@@ -47,3 +47,18 @@ export const handleUsers = (pageNumber) => {
     }
 
 }
+
+export const handleUser = (userID) => {
+    return async(dispatch) => {
+        
+        fetch(`https://reqres.in/api/users/${userID}`)
+            .then(response => response.json())
+            .then(data => {
+                return dispatch({
+                    type: 'SET_USERS',
+                    payload: data
+                })
+            });
+    }
+
+}
