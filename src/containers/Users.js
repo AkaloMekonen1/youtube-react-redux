@@ -24,11 +24,16 @@ class Users extends Component {
     }
     return pageNumberRender
   }
+
   handleButtonClick(pageNumber){
     if(this.props.users.page !== pageNumber){
       this.props.history.push(`/Users/${pageNumber}`)
       // this.props.getUsers(pageNumber)
     }
+  }
+
+  handleUser(userID){
+    this.props.history.push(`./${userID}`)
   }
   render() {
     const changePageNumberRender = this.handleChangePageNumberRender()
@@ -47,7 +52,7 @@ class Users extends Component {
             {this.props.users.data.map((user, userIndex) => (
               <tr key={userIndex}>
                 <th scope="row">{user.id}</th>
-                <td>{user.first_name}</td>
+                <span onClick={()=>this.handleUser(user.id)}><td>{user.first_name}</td></span>
                 <td>{user.last_name}</td>
               </tr>
             ))}
