@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
+import { handleUser} from "../actions/usersAction"
 class Cards extends Component {
   render() {
     return (
@@ -21,9 +22,10 @@ class Cards extends Component {
 }
 const mapStateToProps = (globalState) => {
   return {
-    siteName: globalState.siteName,
+    userActive: globalState.userReducer.userActive
   };
 };
 const mapDispatchToProps = {
+    handleUser: handleUser
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Cards);
