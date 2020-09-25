@@ -52,7 +52,7 @@ class Users extends Component {
             {this.props.users.data.map((user, userIndex) => (
               <tr key={userIndex}>
                 <th scope="row">{user.id}</th>
-                <span className="pointer" onClick={()=>this.handleUser(user.id)}><td>{user.first_name}</td></span>
+                <td><span className="pointer" onClick={()=>this.handleUser(user.id)}>{user.first_name}</span></td>
                 <td>{user.last_name}</td>
               </tr>
             ))}
