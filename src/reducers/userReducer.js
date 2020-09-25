@@ -8,6 +8,13 @@ const initState ={
             total: null,
             total_pages: null,
             data: []
+    },
+    userActive: {
+        id: null,
+        email: null,
+        first_name: null,
+        last_name: null,
+        avatar: null
     }
 }
 const userReducer = (state = initState, action)=>{
@@ -19,6 +26,8 @@ const userReducer = (state = initState, action)=>{
         case 'SET_USERS':
             state = {...state, users: action.payload}
             break 
+        case 'SET_USER':
+            state = {...state, userActive: action.payload}    
             default: 
             break
     }
