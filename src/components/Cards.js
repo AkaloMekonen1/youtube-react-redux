@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
-class Card extends Component {
+class Cards extends Component {
   render() {
     return (
-      <div className="card" style="width: 18rem;">
+      <div className="card">
         <img className="card-img-top" src="..." alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -26,4 +26,4 @@ const mapStateToProps = (globalState) => {
 };
 const mapDispatchToProps = {
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);
