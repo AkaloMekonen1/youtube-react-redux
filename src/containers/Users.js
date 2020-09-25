@@ -33,7 +33,7 @@ class Users extends Component {
   }
 
   handleUser(userID){
-    this.props.history.push(`./${userID}`)
+    this.props.history.push(`./User/${userID}`)
   }
   render() {
     const changePageNumberRender = this.handleChangePageNumberRender()
