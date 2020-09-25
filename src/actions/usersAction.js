@@ -55,7 +55,7 @@ export const handleUser = (userID) => {
             .then(response => response.json())
             .then(data => {
                 return dispatch({
-                    type: 'SET_USERS',
+                    type: 'SET_USER',
                     payload: data
                 })
             });
