@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link ,NavLink } from "react-router-dom"
 import Home from "./containers/Home";
 import Users from "./containers/Users";
 import Login from "./containers/Login";
-import Card from "./components/Cards"
+import User from "./containers/User"
 import PrivateRouter from "./containers/PrivateRout"
 import {logoutUser} from './actions/usersAction'
 class App extends Component {
@@ -46,7 +46,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <PrivateRouter path="/users/:pageNumber?" component={Users} />
-          <PrivateRouter path="/user/:userID" component={Card} />
+          <PrivateRouter path="/user/:userID" component={User} />
         </div>
       </Router>
     );
