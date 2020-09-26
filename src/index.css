@@ -16,6 +16,6 @@ code {
   cursor: pointer;
 }
 
-.card-img-top{
-  max-width: 200px;
+.card{
+  max-width: 300px;
 }
