@@ -1,6 +1,5 @@
 export const loginUser = (email, password) => {
     return async(dispatch) => {
-        console.log(email, password)
         const body = {
             email: 'eve.holt@reqres.in',
             password: 'cityslicka'
@@ -16,7 +15,6 @@ export const loginUser = (email, password) => {
             .then(response => response.json())
             .then(data => {
                 const isLoggedIn = (typeof data.token !== 'undefined' && data.token !== '')
-                console.log(data)
                 return dispatch({
                     type: 'LOGIN',
                     payload: isLoggedIn
@@ -39,7 +37,6 @@ export const handleUsers = (pageNumber) => {
         fetch(`https://reqres.in/api/users?page=${pageNumber}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data, "old action")
                 return dispatch({
                     type: 'SET_USERS',
                     payload: data
@@ -55,7 +52,6 @@ export const handleUser = (userID) => {
         fetch(`https://reqres.in/api/users/${userID}`)
             .then(response => response.json())
             .then(data => {
-                console.log(data, "new action")
                 return dispatch({
                     type: 'SET_USER',
                     payload: data
