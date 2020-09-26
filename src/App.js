@@ -4,8 +4,8 @@ import { changeSiteName } from "./actions/changeSiteName";
 import { BrowserRouter as Router, Route, Link ,NavLink } from "react-router-dom";
 import Home from "./containers/Home";
 import Users from "./containers/Users";
-import User from "./containers/User";
 import Login from "./containers/Login";
+import Card from "./components/Cards"
 import PrivateRouter from "./containers/PrivateRout"
 import {logoutUser} from './actions/usersAction'
 class App extends Component {
@@ -46,7 +46,7 @@ class App extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <PrivateRouter path="/users/:pageNumber?" component={Users} />
-          <PrivateRouter path="/user/:userID" component={User} />
+          <PrivateRouter path="/user/:userID" component={Card} />
         </div>
       </Router>
     );
