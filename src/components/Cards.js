@@ -2,6 +2,21 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 import { handleUser} from "../actions/usersAction"
 class Cards extends Component {
+
+  componentWillMount(){
+    this.props.handleUser(this.userID)
+  }
+
+  componentDidUpdate(prevProps){
+    if(prevProps.match.params.userID !== this.userActive){
+      this.props.handleUser(this.userID)
+    }
+  }
+
+  get userID(){
+    return this.props.match.params.userID
+  }
+
   render() {
       console.log(this.props.userActive)
     return (
