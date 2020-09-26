@@ -7,18 +7,17 @@ class Cards extends Component {
     this.props.handleUser(this.userID)
   }
 
-  componentDidUpdate(prevProps){
-    if(prevProps.match.params.userID !== this.userActive){
-      this.props.handleUser(this.userID)
-    }
-  }
+  // componentDidUpdate(prevProps){
+  //   if(prevProps.match.params.userID !== this.userActive){
+  //     this.props.handleUser(this.userID)
+  //   }
+  // }
 
   get userID(){
     return this.props.match.params.userID
   }
 
   render() {
-      console.log(this.props.userActive)
     return (
       <div className="card">
         <img className="card-img-top" src={this.props.userActive.data.avatar} alt="" />
